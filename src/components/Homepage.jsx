@@ -1,6 +1,9 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import SectionCard from "../components/SectionCard";
+import Greeting from "./Greeting";
+import NameClock from "./NameClock";
+import Weather from "./Weather";
 
 const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,108 +14,166 @@ const Homepage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-6 bg-[#1E1E1E] text-gray-200">
+    <div className="min-h-screen flex flex-col items-center p-4 bg-[#1E1E1E] text-gray-200">
       {/* Header */}
-      <header className="mb-6 text-center">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-wide">Developer Hub</h1>
-        <p className="mt-2 text-gray-400 text-base sm:text-lg">Your Minimal & Functional Start Page</p>
+      <header className="w-full flex flex-col items-center justify-center mb-3 text-center space-y-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-x-4">
+          <Greeting />
+          {/* <Weather /> */}
+          {/* <NameClock /> */}
+        </div>
+        <SearchBar
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          handleSearch={handleSearch}
+        />
       </header>
 
-      {/* Search Bar */}
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} handleSearch={handleSearch} />
-
-      {/* 🔥 Responsive Grid Layout */}
-      <div className="w-full max-w-6xl grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 auto-rows-auto">
-        
+      {/* 🔥 Responsive Puzzle-Like Grid Layout */}
+      <div className="w-full grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 grid-rows-auto">
         {/* 🔹 First Row - 4 Small Boxes */}
-        <SectionCard title="Search & Browse" bgColor="#252526" textColor="#DDD5CB"
+        <SectionCard
+          title="Quick Links"
+          bgColor="#333"
+          textColor="#DDD5CB"
           links={[
             { name: "Google", url: "https://www.google.com" },
-            { name: "Grok AI", url: "https://x.com/grok" },
-            { name: "Claude AI", url: "https://claude.ai/" },
-            { name: "Firefox", url: "https://www.mozilla.org/en-US/firefox/new/" }
-          ]}
-          className="lg:col-span-2 sm:row-span-1"
-        />
-
-        <SectionCard title="Social & Messaging" bgColor="#2E2E2E" textColor="#F1F1F1"
-          links={[
-            { name: "WhatsApp", url: "https://web.whatsapp.com/" },
-            { name: "Telegram", url: "https://web.telegram.org" },
-            { name: "X (Twitter)", url: "https://x.com" },
-            { name: "Instagram", url: "https://www.instagram.com" }
-          ]}
-          className="lg:col-span-2 sm:row-span-1"
-        />
-
-        <SectionCard title="Shopping" bgColor="#3A3A3A" textColor="#EAEAEA"
-          links={[
-            { name: "Amazon", url: "https://www.amazon.in" },
-            { name: "Flipkart", url: "https://www.flipkart.com" },
-            { name: "Myntra", url: "https://www.myntra.com" }
-          ]}
-          className="lg:col-span-1"
-        />
-
-        <SectionCard title="Travel" bgColor="#444444" textColor="#FFF"
-          links={[
-            { name: "Ixigo", url: "https://www.ixigo.com" }
-          ]}
-          className="lg:col-span-1"
-        />
-
-        {/* 🔹 Second Row - Jobs & Careers (Updated Section) */}
-        <SectionCard title="Jobs & Careers" description="Find the best job opportunities." bgColor="#1F1F1F" textColor="#E1E1E1"
-          links={[
-            { name: "LinkedIn", url: "https://www.linkedin.com" },
-            { name: "Naukri", url: "https://www.naukri.com" },
-            { name: "Indeed", url: "https://www.indeed.com" },
-            { name: "WellFound", url: "https://wellfound.com/jobs" },
-            { name: "Placify", url: "https://www.placify.in/" },
-            { name: "Job4Freshers", url: "https://job4freshers.co.in/" },
-            { name: "Job with Sanika", url: "https://t.me/jobwithsanika" },
-            { name: "Oceans of Jobs", url: "https://t.me/oceansofjobs" },
-            { name: "RemoteOK", url: "https://remoteok.io/" },
-            { name: "JobEngine", url: "https://www.jobengine.ai/" },
-            { name: "OffCampusPhoodenge", url: "https://www.offcampusphoodenge.com/" },
-            { name: "Devtown", url: "https://www.devtown.in/" },
-            { name: "JobLelo", url: "https://joblelo.com/" },
-            { name: "AKTU Papers", url: "https://aktupapers.in/" }
-          ]}
-          className="lg:col-span-3 sm:row-span-1"
-        />
-
-        <SectionCard title="Coding & Tech" bgColor="#464646" textColor="#F5F5F5"
-          links={[
+            { name: "Stack Overflow", url: "https://stackoverflow.com" },
             { name: "GitHub", url: "https://github.com" },
-            { name: "LeetCode", url: "https://leetcode.com" },
-            { name: "CodeChef", url: "https://www.codechef.com" },
-            { name: "CodeForces", url: "https://codeforces.com" }
+            { name: "MDN Docs", url: "https://developer.mozilla.org" },
+            { name: "W3Schools", url: "https://www.w3schools.com" },
           ]}
-          className="lg:col-span-1 sm:row-span-2"
+          className="col-span-1 sm:col-span-2 row-span-1 rounded-tl-3xl"
+        />
+
+        <SectionCard
+          title="Coding Challenges"
+          bgColor="#2E2E2E"
+          textColor="#F1F1F1"
+          links={[
+            { name: "LeetCode", url: "https://leetcode.com" },
+            { name: "CodeWars", url: "https://www.codewars.com" },
+            { name: "HackerRank", url: "https://www.hackerrank.com" },
+            { name: "CodeChef", url: "https://www.codechef.com" },
+            { name: "TopCoder", url: "https://www.topcoder.com" },
+          ]}
+          className="col-span-1 sm:col-span-2 row-span-1"
+        />
+
+        <SectionCard
+          title="News & Trends"
+          bgColor="#3A3A3A"
+          textColor="#EAEAEA"
+          links={[
+            { name: "Dev.to", url: "https://dev.to" },
+            { name: "Hacker News", url: "https://news.ycombinator.com" },
+            { name: "Smashing Magazine", url: "https://www.smashingmagazine.com" },
+            { name: "CSS-Tricks", url: "https://css-tricks.com" },
+            { name: "Medium", url: "https://medium.com/tag/development" },
+          ]}
+          className="col-span-1 row-span-1 rounded-tr-3xl"
+        />
+
+        <SectionCard
+          title="Dev Tools"
+          bgColor="#444444"
+          textColor="#FFF"
+          links={[
+            { name: "Postman", url: "https://www.postman.com" },
+            { name: "Regex101", url: "https://regex101.com" },
+            { name: "JSON Formatter", url: "https://jsonformatter.org" },
+            { name: "JWT Debugger", url: "https://jwt.io" },
+            { name: "CodeSandbox", url: "https://codesandbox.io" },
+          ]}
+          className="col-span-1 row-span-1"
+        />
+
+        {/* 🔹 Second Row - 3 Larger Boxes */}
+        <SectionCard
+          title="Job Search"
+          bgColor="#323132"
+          textColor="#E1E1E1"
+          links={[
+            { name: "LinkedIn Jobs", url: "https://www.linkedin.com/jobs/" },
+            { name: "Indeed", url: "https://www.indeed.com" },
+            { name: "AngelList", url: "https://angel.co/jobs" },
+            { name: "WellFound", url: "https://wellfound.com/jobs" },
+            { name: "Hired", url: "https://hired.com" },
+          ]}
+          className="col-span-1 sm:col-span-3 row-span-1 rounded-bl-3xl"
+        />
+
+        <SectionCard
+          title="Notes & Tasks"
+          bgColor="#323232"
+          textColor="#EAEAEA"
+          links={[
+            { name: "Notion", url: "https://www.notion.so" },
+            { name: "Todoist", url: "https://todoist.com" },
+            { name: "Google Keep", url: "https://keep.google.com" },
+            { name: "Evernote", url: "https://www.evernote.com" },
+            { name: "Obsidian", url: "https://obsidian.md" },
+          ]}
+          className="col-span-1 sm:col-span-2 row-span-1"
+        />
+
+        <SectionCard
+          title="Design & Inspiration"
+          bgColor="#464646"
+          textColor="#F5F5F5"
+          links={[
+            { name: "Figma", url: "https://www.figma.com" },
+            { name: "Canva", url: "https://www.canva.com" },
+            { name: "Coolors", url: "https://coolors.co/" },
+            { name: "Dribbble", url: "https://dribbble.com" },
+            { name: "Behance", url: "https://www.behance.net" },
+          ]}
+          className="col-span-1 row-span-2"
         />
 
         {/* 🔹 Third Row - 2 Medium Boxes */}
-        <SectionCard title="Company Portals" bgColor="#2A2A2A" textColor="#F1F1F1"
+        <SectionCard
+          title="Learning"
+          bgColor="#2A2A2A"
+          textColor="#F1F1F1"
           links={[
-            { name: "Accenture", url: "https://www.accenture.com" },
-            { name: "Capgemini", url: "https://www.capgemini.com" },
-            { name: "Wipro", url: "https://www.wipro.com" },
-            { name: "Cisco", url: "https://www.cisco.com" }
+            { name: "FreeCodeCamp", url: "https://www.freecodecamp.org" },
+            { name: "CS50", url: "https://cs50.harvard.edu/" },
+            { name: "The Odin Project", url: "https://www.theodinproject.com" },
+            { name: "Frontend Masters", url: "https://frontendmasters.com" },
+            { name: "Egghead.io", url: "https://egghead.io" },
           ]}
-          className="lg:col-span-2 sm:row-span-1"
+          className="col-span-1 sm:col-span-2 row-span-1 rounded-br-3xl"
         />
 
-        <SectionCard title="Learning & Challenges" bgColor="#3D3D3D" textColor="#FFF"
+        <SectionCard
+          title="Project-Based Learning"
+          bgColor="#3D3D3D"
+          textColor="#FFF"
           links={[
-            { name: "Striver 400 Sheet", url: "https://takeuforward.org/strivers-a2z-dsa-course/" },
-            { name: "Striver 100 Sheet", url: "https://takeuforward.org/interview-experience/100-coding-problems/" },
-            { name: "GeeksforGeeks", url: "https://www.geeksforgeeks.org" },
-            { name: "MonkeyType", url: "https://www.monkeytype.com" }
+            { name: "Dev Projects", url: "https://devprojects.com" },
+            { name: "Frontend Mentor", url: "https://www.frontendmentor.io/" },
+            { name: "Buildspace", url: "https://buildspace.so/" },
+            { name: "Full Stack Open", url: "https://fullstackopen.com" },
+            { name: "App Ideas Collection", url: "https://github.com/florinpop17/app-ideas" },
           ]}
-          className="lg:col-span-3 sm:row-span-1"
+          className="col-span-1 sm:col-span-3 row-span-1"
         />
 
+        {/* 🔹 Fourth Row - Full-Width Box */}
+        <SectionCard
+          title="Developer Resources"
+          bgColor="#282828"
+          textColor="#E0E0E0"
+          links={[
+            { name: "Awesome Lists", url: "https://github.com/sindresorhus/awesome" },
+            { name: "Roadmap.sh", url: "https://roadmap.sh/" },
+            { name: "DevDocs", url: "https://devdocs.io" },
+            { name: "OverAPI", url: "https://overapi.com" },
+            { name: "Refactoring Guru", url: "https://refactoring.guru" },
+          ]}
+          className="col-span-1 sm:col-span-6 row-span-1 rounded-3xl"
+        />
       </div>
     </div>
   );

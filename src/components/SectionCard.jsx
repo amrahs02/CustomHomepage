@@ -3,7 +3,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const SectionCard = ({ title, description, bgColor, textColor, links, className }) => {
   return (
     <div 
-      className={`p-6 rounded-lg shadow-md hover:scale-[1.02] transition-transform ${className}`}
+      className={`p-6 rounded-sm shadow-md hover:scale-[1.02] transition-transform ${className}`}
       style={{ backgroundColor: bgColor, color: textColor }}
     >
       {/* Section Title */}
