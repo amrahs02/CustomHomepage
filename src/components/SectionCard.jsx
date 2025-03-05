@@ -1,4 +1,6 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaIconName } from 'react-icons/fa';
+
 
 const SectionCard = ({ title, description, bgColor, textColor, links, className }) => {
   return (
