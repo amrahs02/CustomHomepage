@@ -31,7 +31,6 @@ const Homepage = () => {
       <div className="w-full grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 auto-rows-fr">
         {/* First Row */}
 
-
         <SectionCard
           title="News & Trends"
           bgColor="#3A3A3A"
@@ -43,7 +42,7 @@ const Homepage = () => {
             { name: "The Hindu", url: "https://www.thehindu.com" },
             { name: "lallantop", url: "https://www.thelallantop.com" },
           ]}
-          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1  rounded-tl-3xl  row-span-2 "
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 rounded-tl-3xl    row-span-2 "
         />
         <SectionCard
           title="AI Tools"
@@ -55,9 +54,8 @@ const Homepage = () => {
             { name: "Claude", url: "https://claude.ai" },
             { name: "ChatGPT", url: "https://www.chat.com" },
           ]}
-          className="col-span-1 sm:col-span-2 lg:col-span-2 rounded-br-3xl xl:col-span-2 row-span-1  "
+          className="col-span-1 sm:col-span-2 lg:col-span-2  xl:col-span-2 row-span-1  "
         />
-          
 
         <SectionCard
           title="Coding Challenges"
@@ -69,7 +67,7 @@ const Homepage = () => {
             { name: "CodeChef", url: "https://www.codechef.com" },
             { name: "TopCoder", url: "https://www.topcoder.com" },
           ]}
-          className="col-span-1 sm:col-span-1 rounded-bl-3xl lg:col-span-2 xl:col-span-2 row-span-1 "
+          className="col-span-1 sm:col-span-1  lg:col-span-2 xl:col-span-2 row-span-1 "
         />
 
         <SectionCard
@@ -89,10 +87,8 @@ const Homepage = () => {
               url: "https://www.mongodb.com/cloud/atlas",
             },
           ]}
-          className="col-span-1 sm:col-span-1 lg:col-span-1 rounded-tr-3xl xl:col-span-1 row-span-2 "
+          className="col-span-1 sm:col-span-1 lg:col-span-1 rounded-tr-3xl  xl:col-span-1 row-span-2 "
         />
-
-     
 
         <SectionCard
           title="Notes & Tasks"
@@ -105,7 +101,7 @@ const Homepage = () => {
             { name: "Evernote", url: "https://www.evernote.com" },
             { name: "Obsidian", url: "https://obsidian.md" },
           ]}
-          className="col-span-1 sm:col-span-1 rounded-tr-3xl lg:col-span-1 xl:col-span-1 row-span-1 "
+          className="col-span-1 sm:col-span-1  lg:col-span-1 xl:col-span-1 row-span-1 "
         />
 
         <SectionCard
@@ -118,7 +114,7 @@ const Homepage = () => {
             { name: "Wired", url: "https://www.wired.com" },
             { name: "Ars Technica", url: "https://arstechnica.com" },
           ]}
-          className="col-span-1 sm:col-span-1 rounded-t-3xl rounded-bl-3xl lg:col-span-1 xl:col-span-1 row-span-2  "
+          className="col-span-1 sm:col-span-1   lg:col-span-1 xl:col-span-1 row-span-2  "
         />
 
         {/* Second Row */}
@@ -135,13 +131,12 @@ const Homepage = () => {
             { name: "Naukri", url: "https://www.naukri.com" },
             { name: "Monster", url: "https://www.monster.com" },
             { name: "Instahyre", url: "https://www.instahyre.com" },
-            {name: "Remote OK", url: "https://remoteok.io"},
-            {name: "We Work Remotely", url: "https://weworkremotely.com"},
-            {name: "Twitter Jobs", url: "https://twitter.com/jobs"},
-            {name: "GitHub Jobs", url: "https://jobs.github.com"},
-            
+            { name: "Remote OK", url: "https://remoteok.io" },
+            { name: "We Work Remotely", url: "https://weworkremotely.com" },
+            { name: "Twitter Jobs", url: "https://twitter.com/jobs" },
+            { name: "GitHub Jobs", url: "https://jobs.github.com" },
           ]}
-          className="col-span-1 sm:col-span-1 lg:col-span-1 rounded-br-3xl rounded-t-3xl xl:col-span-1 row-span-2  "
+          className="col-span-1 sm:col-span-1 lg:col-span-1   xl:col-span-1 row-span-2  "
         />
 
         <SectionCard
@@ -155,7 +150,7 @@ const Homepage = () => {
             { name: "Google Drive", url: "https://drive.google.com" },
             { name: "Google Docs", url: "https://docs.google.com" },
           ]}
-          className="col-span-1 sm:col-span-1 rounded-tl-3xl lg:col-span-1 xl:col-span-1 row-span-1 "
+          className="col-span-1 sm:col-span-1  lg:col-span-1 xl:col-span-1 row-span-1 "
         />
 
         {/* <SectionCard
@@ -187,19 +182,15 @@ const Homepage = () => {
               url: "https://github.com/florinpop17/app-ideas",
             },
           ]}
-          className="col-span-1 sm:col-span-2 rounded-br-3xl lg:col-span-2 xl:col-span-2 row-span-1"
+          className="col-span-1 sm:col-span-2  lg:col-span-2 xl:col-span-2 row-span-1"
         />
 
         <SectionCard
           title="My Favourite Tools"
           bgColor="#3D3D3D"
           textColor="#FFF"
-          links={[
-            
-
-         
-          ]}
-          className="col-span-1 sm:col-span-2 lg:col-span-2 rounded-bl-3xl xl:col-span-2 row-span-1"
+          links={[]}
+          className="col-span-1 sm:col-span-2 lg:col-span-2  xl:col-span-2 row-span-1"
         />
 
         {/* Fourth Row */}
@@ -217,7 +208,7 @@ const Homepage = () => {
             { name: "OverAPI", url: "https://overapi.com" },
             { name: "Refactoring Guru", url: "https://refactoring.guru" },
           ]}
-          className="col-span-1 sm:col-span-2 rounded-tr-3xl lg:col-span-2 xl:col-span-2 row-span-1 rounded-3xl"
+          className="col-span-1 sm:col-span-2  lg:col-span-2 xl:col-span-2 row-span-1 rounded-3xl"
         />
 
         <SectionCard
@@ -233,7 +224,7 @@ const Homepage = () => {
             },
             { name: "Discord Dev Servers", url: "https://discord.com" },
           ]}
-          className="col-span-1 sm:col-span-2 rounded-t-3xl lg:col-span-1 xl:col-span-2 row-span-1 rounded-3xl"
+          className="col-span-1 sm:col-span-2  lg:col-span-1 xl:col-span-2 row-span-1 rounded-3xl"
         />
         <SectionCard
           title="Coder Communities"
@@ -248,7 +239,7 @@ const Homepage = () => {
             },
             { name: "Discord Dev Servers", url: "https://discord.com" },
           ]}
-          className="col-span-1 sm:col-span-2 lg:col-span-1 rounded-tl-3xl xl:col-span-2 row-span-1 rounded-3xl"
+          className="col-span-1 sm:col-span-2 lg:col-span-1  xl:col-span-2 row-span-1 rounded-3xl"
         />
       </div>
     </div>
