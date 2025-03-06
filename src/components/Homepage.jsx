@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar";
 import SectionCard from "../components/SectionCard";
 import Greeting from "./Greeting";
 import NameClock from "./NameClock";
+import TimeDisplay from "./TimeDisplay";
 import Weather from "./Weather";
 
 const Homepage = () => {
@@ -14,36 +15,32 @@ const Homepage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 bg-[#1E1E1E] text-gray-200">
+    <div className="min-h-screen flex flex-col items-center px-4 bg-[#1E1E1E] text-gray-200">
       {/* Header */}
-      <header className="w-full flex flex-col items-center justify-center mb-3 text-center space-y-4">
-        <div className="flex flex-col sm:flex-row items-center justify-center space-x-4">
-          <Greeting />
-          {/* <Weather /> */}
-          {/* <NameClock /> */}
-        </div>
+      <header className="w-full flex flex-col items-center justify-evenly px-3 sm:px-4 md:px-5 lg:px-6 xl:px-8 py-2 sm:py-2.5 md:py-3 lg:py-3.5 xl:py-4 gap-3 sm:flex-row sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+        <Greeting />
         <SearchBar
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           handleSearch={handleSearch}
         />
+        <TimeDisplay />
       </header>
 
-      {/* 🔥 Responsive Puzzle-Like Grid Layout */}
-      <div className="w-full grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 grid-rows-auto">
-        {/* 🔹 First Row - 4 Small Boxes */}
+      {/* Responsive Grid Layout */}
+      <div className="w-full grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 auto-rows-fr">
+        {/* First Row */}
         <SectionCard
-          title="Quick Links"
+          title="AI Tools"
           bgColor="#333"
           textColor="#DDD5CB"
           links={[
-            { name: "Google", url: "https://www.google.com" },
-            { name: "Stack Overflow", url: "https://stackoverflow.com" },
-            { name: "GitHub", url: "https://github.com" },
-            { name: "MDN Docs", url: "https://developer.mozilla.org" },
-            { name: "W3Schools", url: "https://www.w3schools.com" },
+            { name: "Grok", url: "https://grok.com" },
+            { name: "DeepSeek", url: "https://deepseek.com" },
+            { name: "Claude", url: "https://claude.ai" },
+            { name: "ChatGPT", url: "https://www.chat.com" },
           ]}
-          className="col-span-1 sm:col-span-2 row-span-1 rounded-tl-3xl"
+          className="col-span-1 sm:col-span-2 lg:col-span-2 xl:col-span-2 row-span-1 rounded-tl-3xl rounded-br-3xl"
         />
 
         <SectionCard
@@ -52,26 +49,11 @@ const Homepage = () => {
           textColor="#F1F1F1"
           links={[
             { name: "LeetCode", url: "https://leetcode.com" },
-            { name: "CodeWars", url: "https://www.codewars.com" },
             { name: "HackerRank", url: "https://www.hackerrank.com" },
             { name: "CodeChef", url: "https://www.codechef.com" },
             { name: "TopCoder", url: "https://www.topcoder.com" },
           ]}
-          className="col-span-1 sm:col-span-2 row-span-1"
-        />
-
-        <SectionCard
-          title="News & Trends"
-          bgColor="#3A3A3A"
-          textColor="#EAEAEA"
-          links={[
-            { name: "Dev.to", url: "https://dev.to" },
-            { name: "Hacker News", url: "https://news.ycombinator.com" },
-            { name: "Smashing Magazine", url: "https://www.smashingmagazine.com" },
-            { name: "CSS-Tricks", url: "https://css-tricks.com" },
-            { name: "Medium", url: "https://medium.com/tag/development" },
-          ]}
-          className="col-span-1 row-span-1 rounded-tr-3xl"
+          className="col-span-1 sm:col-span-1 lg:col-span-2 xl:col-span-2 row-span-1 rounded-bl-3xl"
         />
 
         <SectionCard
@@ -81,26 +63,22 @@ const Homepage = () => {
           links={[
             { name: "Postman", url: "https://www.postman.com" },
             { name: "Regex101", url: "https://regex101.com" },
-            { name: "JSON Formatter", url: "https://jsonformatter.org" },
-            { name: "JWT Debugger", url: "https://jwt.io" },
             { name: "CodeSandbox", url: "https://codesandbox.io" },
+            { name: "CodePen", url: "https://codepen.io" },
           ]}
-          className="col-span-1 row-span-1"
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-2 rounded-bl-3xl"
         />
 
-        {/* 🔹 Second Row - 3 Larger Boxes */}
         <SectionCard
-          title="Job Search"
-          bgColor="#323132"
-          textColor="#E1E1E1"
+          title="News & Trends"
+          bgColor="#3A3A3A"
+          textColor="#EAEAEA"
           links={[
-            { name: "LinkedIn Jobs", url: "https://www.linkedin.com/jobs/" },
-            { name: "Indeed", url: "https://www.indeed.com" },
-            { name: "AngelList", url: "https://angel.co/jobs" },
-            { name: "WellFound", url: "https://wellfound.com/jobs" },
-            { name: "Hired", url: "https://hired.com" },
+            { name: "Dev.to", url: "https://dev.to" },
+            { name: "Hacker News", url: "https://news.ycombinator.com" },
+            { name: "Medium", url: "https://medium.com/tag/development" },
           ]}
-          className="col-span-1 sm:col-span-3 row-span-1 rounded-bl-3xl"
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-1 rounded-tr-3xl"
         />
 
         <SectionCard
@@ -114,7 +92,49 @@ const Homepage = () => {
             { name: "Evernote", url: "https://www.evernote.com" },
             { name: "Obsidian", url: "https://obsidian.md" },
           ]}
-          className="col-span-1 sm:col-span-2 row-span-1"
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-1 rounded-br-3xl"
+        />
+
+        <SectionCard
+          title="Journal & News"
+          bgColor="#323232"
+          textColor="#EAEAEA"
+          links={[
+            { name: "The Verge", url: "https://www.theverge.com" },
+            { name: "TechCrunch", url: "https://techcrunch.com" },
+            { name: "Wired", url: "https://www.wired.com" },
+            { name: "Ars Technica", url: "https://arstechnica.com" },
+          ]}
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-1 rounded-bl-3xl rounded-tr-3xl"
+        />
+
+        {/* Second Row */}
+        <SectionCard
+          title="Job Search"
+          bgColor="#323132"
+          textColor="#E1E1E1"
+          links={[
+            { name: "LinkedIn Jobs", url: "https://www.linkedin.com/jobs/" },
+            { name: "Indeed", url: "https://www.indeed.com" },
+            { name: "AngelList", url: "https://angel.co/jobs" },
+            { name: "WellFound", url: "https://wellfound.com/jobs" },
+            { name: "Hired", url: "https://hired.com" },
+          ]}
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-2 rounded-tl-3xl rounded-bl-3xl"
+        />
+
+        <SectionCard
+          title="Startup Essentials"
+          bgColor="#323132"
+          textColor="#E1E1E1"
+          links={[
+            { name: "LinkedIn", url: "https://www.linkedin.com" },
+            { name: "YouTube", url: "https://www.youtube.com" },
+            { name: "Gmail", url: "https://mail.google.com" },
+            { name: "Google Drive", url: "https://drive.google.com" },
+            { name: "Google Docs", url: "https://docs.google.com" },
+          ]}
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-1 rounded-br-3xl"
         />
 
         <SectionCard
@@ -128,24 +148,10 @@ const Homepage = () => {
             { name: "Dribbble", url: "https://dribbble.com" },
             { name: "Behance", url: "https://www.behance.net" },
           ]}
-          className="col-span-1 row-span-2"
+          className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 row-span-2"
         />
 
-        {/* 🔹 Third Row - 2 Medium Boxes */}
-        <SectionCard
-          title="Learning"
-          bgColor="#2A2A2A"
-          textColor="#F1F1F1"
-          links={[
-            { name: "FreeCodeCamp", url: "https://www.freecodecamp.org" },
-            { name: "CS50", url: "https://cs50.harvard.edu/" },
-            { name: "The Odin Project", url: "https://www.theodinproject.com" },
-            { name: "Frontend Masters", url: "https://frontendmasters.com" },
-            { name: "Egghead.io", url: "https://egghead.io" },
-          ]}
-          className="col-span-1 sm:col-span-2 row-span-1 rounded-br-3xl"
-        />
-
+        {/* Third Row */}
         <SectionCard
           title="Project-Based Learning"
           bgColor="#3D3D3D"
@@ -155,25 +161,72 @@ const Homepage = () => {
             { name: "Frontend Mentor", url: "https://www.frontendmentor.io/" },
             { name: "Buildspace", url: "https://buildspace.so/" },
             { name: "Full Stack Open", url: "https://fullstackopen.com" },
-            { name: "App Ideas Collection", url: "https://github.com/florinpop17/app-ideas" },
+            {
+              name: "App Ideas Collection",
+              url: "https://github.com/florinpop17/app-ideas",
+            },
           ]}
-          className="col-span-1 sm:col-span-3 row-span-1"
+          className="col-span-1 sm:col-span-2 lg:col-span-2 xl:col-span-2 row-span-1"
         />
 
-        {/* 🔹 Fourth Row - Full-Width Box */}
+        <SectionCard
+          title="Linux Resources"
+          bgColor="#3D3D3D"
+          textColor="#FFF"
+          links={[
+            { name: "Ubuntu", url: "https://ubuntu.com" },
+            { name: "Linux Mint", url: "https://linuxmint.com" },
+            { name: "Arch Wiki", url: "https://wiki.archlinux.org" },
+            { name: "Linux Journey", url: "https://linuxjourney.com" },
+          ]}
+          className="col-span-1 sm:col-span-2 lg:col-span-2 xl:col-span-2 row-span-1"
+        />
+
+        {/* Fourth Row */}
         <SectionCard
           title="Developer Resources"
-          bgColor="#282828"
+          bgColor="#444444"
           textColor="#E0E0E0"
           links={[
-            { name: "Awesome Lists", url: "https://github.com/sindresorhus/awesome" },
+            {
+              name: "Awesome Lists",
+              url: "https://github.com/sindresorhus/awesome",
+            },
             { name: "Roadmap.sh", url: "https://roadmap.sh/" },
             { name: "DevDocs", url: "https://devdocs.io" },
             { name: "OverAPI", url: "https://overapi.com" },
             { name: "Refactoring Guru", url: "https://refactoring.guru" },
           ]}
-          className="col-span-1 sm:col-span-6 row-span-1 rounded-3xl"
+          className="col-span-1 sm:col-span-2 lg:col-span-2 xl:col-span-2 row-span-1 rounded-3xl"
         />
+
+        <SectionCard
+          title="Coder Communities"
+          bgColor="#444444"
+          textColor="#E0E0E0"
+          links={[
+            { name: "Stack Overflow", url: "https://stackoverflow.com" },
+            { name: "GitHub", url: "https://github.com" },
+            { name: "Reddit r/programming", url: "https://www.reddit.com/r/programming/" },
+            { name: "Discord Dev Servers", url: "https://discord.com" },
+          ]}
+          className="col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-2 row-span-1 rounded-3xl"
+        />
+        <SectionCard
+          title="Coder Communities"
+          bgColor="#444444"
+          textColor="#E0E0E0"
+          links={[
+            { name: "Stack Overflow", url: "https://stackoverflow.com" },
+            { name: "GitHub", url: "https://github.com" },
+            { name: "Reddit r/programming", url: "https://www.reddit.com/r/programming/" },
+            { name: "Discord Dev Servers", url: "https://discord.com" },
+          ]}
+          className="col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-2 row-span-1 rounded-3xl"
+        />
+
+
+     
       </div>
     </div>
   );
